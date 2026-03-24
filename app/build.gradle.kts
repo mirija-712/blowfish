@@ -44,23 +44,13 @@ sonar {
         property("sonar.projectKey", "mirija-712_blowfish")
         property("sonar.organization", "mirija-712")
         property("sonar.host.url", "https://sonarcloud.io")
-
-        // Nom affiché dans SonarCloud
         property("sonar.projectName", "Blowfish")
 
-        // Analyse uniquement le code racine
-        property("sonar.sources", "src")
-
-        // Classes compilées (Gradle)
-        property("sonar.java.binaries", "build/classes/java/main")
-
-        // Tests
+        // IMPORTANT : séparer clairement main et test
+        property("sonar.sources", "src/main/java")
         property("sonar.tests", "src/test/java")
 
-        // Coverage JaCoCo
-        property(
-            "sonar.coverage.jacoco.xmlReportPaths",
-            "build/reports/jacoco/test/jacocoTestReport.xml"
-        )
+        // Classes compilées du module app
+        property("sonar.java.binaries", "app/build/classes/java/main")
     }
 }
