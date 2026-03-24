@@ -45,17 +45,14 @@ sonar {
         property("sonar.organization", "mirija-712")
         property("sonar.host.url", "https://sonarcloud.io")
 
-        // IMPORTANT : définir clairement les dossiers
+        // séparation stricte sources / tests
         property("sonar.sources", "src/main/java")
         property("sonar.tests", "src/test/java")
-
-        // exclure les tests des sources (évite le double index)
-        property("sonar.exclusions", "**/src/test/java/**")
 
         // classes compilées
         property("sonar.java.binaries", "build/classes/java/main")
 
-        // couverture Jacoco
+        // rapport de couverture Jacoco
         property(
             "sonar.coverage.jacoco.xmlReportPaths",
             "build/reports/jacoco/test/jacocoTestReport.xml"
