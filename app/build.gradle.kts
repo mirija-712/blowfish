@@ -35,7 +35,7 @@ tasks.named<Test>("test") {
 sonar {
     properties {
         property("sonar.projectKey", "blowfish")
-        property("sonar.organization", "TON_ORG")
+        property("sonar.organization", "mirija-712")
         property("sonar.host.url", "https://sonarcloud.io")
         property("sonar.login", System.getenv("SONAR_TOKEN"))
     }
