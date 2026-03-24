@@ -45,14 +45,17 @@ sonar {
         property("sonar.organization", "mirija-712")
         property("sonar.host.url", "https://sonarcloud.io")
 
-        // séparation stricte sources / tests
+        // chemins explicites (important en module app)
         property("sonar.sources", "src/main/java")
         property("sonar.tests", "src/test/java")
+
+        // NE PAS exclure globalement les tests (sinon pertes d’issues)
+        // On exclut uniquement les fichiers inutiles si besoin
 
         // classes compilées
         property("sonar.java.binaries", "build/classes/java/main")
 
-        // rapport de couverture Jacoco
+        // coverage Jacoco
         property(
             "sonar.coverage.jacoco.xmlReportPaths",
             "build/reports/jacoco/test/jacocoTestReport.xml"
